@@ -9,7 +9,7 @@ read NEW_GIT_NAME
 printf "Enter your new Git email: "
 read NEW_GIT_EMAIL
 
-OLD_GIT_NAME=$(git config --list | tail -n1 |cut -d'=' -f2) 
+OLD_GIT_NAME=$(git config --list | head -n2 | tail -n1 | cut -d'=' -f2) 
 OLD_GIT_EMAIL=$(git config --list | head -n1 | cut -d'=' -f2)
 
 git config --global user.name "$NEW_GIT_NAME"
